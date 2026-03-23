@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jelly Blocks - Match, Blast, and Survive!</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTT2J0YF6J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-LTT2J0YF6J');
+    </script>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="container">
+            <img src="assets/icon.png" alt="Jelly Blocks App Icon" class="app-icon" onerror="this.src='https://via.placeholder.com/150?text=Icon'">
+            <h1>Jelly Blocks</h1>
+            <p class="tagline">The ultimate block puzzle challenge. Match, Blast, and Survive!</p>
+            
+            <div class="download-buttons">
+                <a href="#" class="btn primary-btn">Download on Google Play</a>
+                <a href="#" class="btn secondary-btn">Download on App Store</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="gameplay">
+        <div class="container">
+            <img src="assets/gameplay.gif" alt="Jelly Blocks Gameplay" class="gameplay-gif" onerror="this.src='https://via.placeholder.com/600x400?text=Gameplay+GIF+Here'">
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container feature-grid">
+            <div class="feature-card">
+                <h3>Endless Puzzles</h3>
+                <p>Test your brain with increasingly difficult block formations. How long can you survive?</p>
+            </div>
+            <div class="feature-card">
+                <h3>Strategic Power-Ups</h3>
+                <p>Earn bombs to clear the board and double your coins to climb the leaderboards.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Clutch Revives</h3>
+                <p>Make a mistake? Use a revive to keep your high score alive and beat your personal best.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 DeenFinancials. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="mailto:deenfinacials@gmail.com">Contact Support</a>
+                <a href="privacy.html">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
