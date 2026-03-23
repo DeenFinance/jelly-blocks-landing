@@ -18,21 +18,24 @@
 <body>
 
     <header class="hero">
-        <div class="container">
-            <img src="assets/icon.png" alt="Jelly Blocks App Icon" class="app-icon" onerror="this.src='https://via.placeholder.com/150?text=Icon'">
-            <h1>Jelly Blocks</h1>
-            <p class="tagline">The ultimate block puzzle challenge. Match, Blast, and Survive!</p>
-            
-            <div class="download-buttons">
-                <a href="#" class="btn primary-btn">Download on Google Play</a>
-                <a href="#" class="btn secondary-btn">Download on App Store</a>
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>Jelly Blocks</h1>
+                <p class="tagline">The ultimate block puzzle challenge. Match, Blast, and Survive!</p>
+                <div class="download-buttons">
+                    <a href="#" class="btn primary-btn">Download on Google Play</a>
+                    <a href="#" class="btn secondary-btn">Download on App Store</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <img src="assets/intro.jpg" alt="Jelly Blocks Intro" class="mockup-img">
             </div>
         </div>
     </header>
 
     <section class="gameplay">
         <div class="container">
-            <img src="assets/gameplay.gif" alt="Jelly Blocks Gameplay" class="gameplay-gif" onerror="this.src='https://via.placeholder.com/600x400?text=Gameplay+GIF+Here'">
+            <img src="assets/gameplay.jpg" alt="Jelly Blocks Gameplay" class="showcase-img">
         </div>
     </section>
 
@@ -47,8 +50,9 @@
                 <p>Earn bombs to clear the board and double your coins to climb the leaderboards.</p>
             </div>
             <div class="feature-card">
+                <img src="assets/revive.jpg" alt="Out of Moves Revive" class="feature-img">
                 <h3>Clutch Revives</h3>
-                <p>Make a mistake? Use a revive to keep your high score alive and beat your personal best.</p>
+                <p>Make a mistake? Watch a quick ad to revive, keep your high score alive, and beat your personal best.</p>
             </div>
         </div>
     </section>
