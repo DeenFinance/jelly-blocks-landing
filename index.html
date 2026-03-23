@@ -6,141 +6,307 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-LTT2J0YF6J');
     </script>
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jelly Blocks - Match, Blast, and Survive!</title>
+    <title>Jelly Blocks | Premium Block Puzzle Game</title>
     
     <style>
+        :root {
+            --primary: #FF3366; /* Jelly Pink */
+            --secondary: #20E3B2; /* Jelly Green */
+            --bg-color: #0b0c10; /* Deep Dark Space */
+            --surface: rgba(255, 255, 255, 0.03);
+            --text-main: #f0f0f5;
+            --text-muted: #a0a0b5;
+        }
+
         body {
-            background-color: #121212;
-            color: #ffffff;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            /* Subtle grid background to mimic a block puzzle board */
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            color: var(--text-main);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             margin: 0;
             padding: 0;
+            overflow-x: hidden;
         }
+
+        /* Ambient Glow Behind Content */
+        .ambient-glow {
+            position: absolute;
+            top: -10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80vw;
+            height: 50vh;
+            background: radial-gradient(circle, rgba(255,51,102,0.12) 0%, rgba(32,227,178,0.05) 50%, transparent 70%);
+            z-index: -1;
+            filter: blur(60px);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
         header {
             text-align: center;
-            padding: 60px 20px;
-            background: linear-gradient(135deg, #1a1a24, #2d2b42);
-            border-bottom: 3px solid #3DDC84;
+            padding: 100px 20px 60px;
+            position: relative;
         }
+
+        .badge {
+            display: inline-block;
+            padding: 8px 16px;
+            background: rgba(32, 227, 178, 0.1);
+            color: var(--secondary);
+            border: 1px solid rgba(32, 227, 178, 0.3);
+            border-radius: 50px;
+            font-size: 0.9em;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
         h1 {
-            font-size: 3.5em;
-            margin-bottom: 15px;
-            color: #ffffff;
+            font-size: 4.5em;
+            margin: 0 0 15px 0;
+            font-weight: 800;
+            line-height: 1.1;
+            background: linear-gradient(135deg, #ffffff 0%, #b3b3b3 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -1px;
         }
+
+        .highlight {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
         .subtitle {
-            font-size: 1.3em;
-            line-height: 1.6;
-            color: #b3b3b3;
+            font-size: 1.25em;
+            color: var(--text-muted);
             max-width: 600px;
-            margin: 0 auto 30px auto;
+            margin: 0 auto 40px auto;
+            line-height: 1.6;
         }
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
+
         .buttons {
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 20px;
             flex-wrap: wrap;
         }
+
         .btn {
-            display: inline-block;
-            padding: 15px 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 32px;
             font-size: 1.1em;
-            font-weight: bold;
+            font-weight: 600;
             color: white;
             text-decoration: none;
-            border-radius: 8px;
-            transition: transform 0.2s, opacity 0.2s;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%; width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: all 0.5s ease;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
         .btn:hover {
-            transform: translateY(-2px);
-            opacity: 0.9;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
         }
-        .btn-amazon { background-color: #FF9900; color: #111; }
-        .btn-itch { background-color: #FA5C5C; }
-        .btn-apk { background-color: #3DDC84; color: #111; }
-        
-        .screenshots {
-            display: flex;
-            justify-content: space-between;
-            margin: 50px 0;
-            gap: 15px;
+
+        .btn-amazon { 
+            background: linear-gradient(135deg, #FF9900, #d98200);
         }
-        .screenshots img {
-            width: 31%;
-            border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+        .btn-itch { 
+            background: linear-gradient(135deg, #FA5C5C, #d64040); 
         }
-        .description-box {
-            background-color: #1e1e1e;
+        .btn-apk { 
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        .btn-apk:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Glassmorphism Showcase */
+        .showcase {
+            margin: 60px 0;
             padding: 40px;
-            border-radius: 12px;
-            text-align: center;
-            margin-top: 20px;
+            background: var(--surface);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
         }
-        .description-box h2 {
+
+        .screenshots {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .screenshots img {
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            transition: transform 0.4s ease;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .screenshots img:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: var(--secondary);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 60px;
+            text-align: left;
+            align-items: center;
+        }
+
+        .feature-text h2 {
+            font-size: 2.5em;
             margin-top: 0;
-            color: #3DDC84;
+            color: #ffffff;
+            line-height: 1.2;
         }
-        .description-box p {
+
+        .feature-text p {
             font-size: 1.1em;
-            color: #d4d4d4;
+            color: var(--text-muted);
             line-height: 1.8;
+            margin-bottom: 20px;
         }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .feature-list li::before {
+            content: '✦';
+            color: var(--primary);
+            margin-right: 15px;
+            font-size: 1.4em;
+            line-height: 1;
+        }
+
         footer {
             text-align: center;
-            padding: 30px 20px;
-            background-color: #0a0a0a;
-            border-top: 1px solid #333;
+            padding: 40px 20px;
+            margin-top: 80px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-muted);
         }
+
         footer a {
-            color: #3DDC84;
+            color: var(--secondary);
             text-decoration: none;
-            font-weight: bold;
+            transition: color 0.2s;
+            font-weight: 500;
         }
+
         footer a:hover {
-            text-decoration: underline;
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 3.2em; }
+            .screenshots { grid-template-columns: 1fr; }
+            .features { grid-template-columns: 1fr; }
+            .btn { width: 100%; box-sizing: border-box; }
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Jelly Blocks</h1>
-    <p class="subtitle">Match, Blast, and Survive! A fun, classic block puzzle game with squishy jelly graphics.</p>
-    <div class="buttons">
-        <a href="https://www.amazon.com/dp/B0GSSR7JZ5" target="_blank" class="btn btn-amazon">Available on Amazon</a>
-        <a href="https://deenfinance.itch.io/jellyblocks" target="_blank" class="btn btn-itch">Get it on itch.io</a>
-        <a href="https://raw.githubusercontent.com/DeenFinancials/deenfinancials.github.io/main/app-release.apk" target="_blank" class="btn btn-apk">Download Direct APK</a>
-    </div>
-</header>
+<div class="ambient-glow"></div>
 
 <div class="container">
-    <div class="screenshots">
-        <img src="intro.jpg" alt="Jelly Blocks Title Screen">
-        <img src="gameplay.jpg" alt="Jelly Blocks Puzzle Grid">
-        <img src="revive.jpg" alt="Jelly Blocks Out of Moves Screen">
-    </div>
+    <header>
+        <div class="badge">Now Available</div>
+        <h1>Jelly <span class="highlight">Blocks</span></h1>
+        <p class="subtitle">Experience the next evolution of block puzzles. Satisfying gameplay, stunning neon aesthetics, and endless strategic fun.</p>
+        
+        <div class="buttons">
+            <a href="https://www.amazon.com/dp/B0GSSR7JZ5" target="_blank" class="btn btn-amazon">Get it on Amazon</a>
+            <a href="https://deenfinance.itch.io/jellyblocks" target="_blank" class="btn btn-itch">Download on itch.io</a>
+            <a href="https://raw.githubusercontent.com/DeenFinancials/deenfinancials.github.io/main/app-release.apk" target="_blank" class="btn btn-apk">Direct APK</a>
+        </div>
+    </header>
 
-    <div class="description-box">
-        <h2>About The Game</h2>
-        <p>Drop into a squishy world with Jelly Blocks! This isn't just another block puzzle; it's a delightful brain teaser wrapped in vibrant, jelly-like graphics that are satisfying to touch and play. Fit the blocks, clear the lines, and relax. Perfect for passing the time and training your brain. Free to play!</p>
+    <div class="showcase">
+        <div class="screenshots">
+            <img src="intro.jpg" alt="Jelly Blocks Title Screen">
+            <img src="gameplay.jpg" alt="Jelly Blocks Gameplay Mechanics">
+            <img src="revive.jpg" alt="Jelly Blocks Revival Screen">
+        </div>
+        
+        <div class="features">
+            <div class="feature-text">
+                <h2>Train your brain,<br>relax your mind.</h2>
+                <p>Jelly Blocks takes the classic grid puzzle formula and elevates it with a premium, satisfyingly squishy aesthetic. No timers, no pressure—just pure, polished gameplay designed to help you unwind while sharpening your strategic thinking.</p>
+            </div>
+            <div>
+                <ul class="feature-list">
+                    <li><strong>Satisfying Aesthetics:</strong> Vibrant, neon-jelly blocks that pop against a sleek dark theme.</li>
+                    <li><strong>Endless Strategy:</strong> Carefully plan your moves to clear multiple lines and achieve massive point combos.</li>
+                    <li><strong>Zero Interruptions:</strong> Seamless offline play available anywhere, anytime.</li>
+                    <li><strong>Free to Play:</strong> Completely free to download and enjoy right now.</li>
+                </ul>
+            </div>
+        </div>
     </div>
 </div>
 
 <footer>
     <p>&copy; 2026 DeenFinancials.co. All Rights Reserved.</p>
-    <p><a href="https://deenfinancials.github.io/jellyblocks-privacy.html" target="_blank">View Privacy Policy</a></p>
+    <p>
+        <a href="https://deenfinancials.github.io/jellyblocks-privacy.html" target="_blank">Privacy Policy</a> | 
+        <a href="https://github.com/DeenFinance/jellyblocks" target="_blank">Developer GitHub</a>
+    </p>
 </footer>
 
 </body>
