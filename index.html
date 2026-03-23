@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jelly Blocks - Match, Blast, and Survive!</title>
-    <link rel="stylesheet" href="style.css">
-
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTT2J0YF6J"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -14,58 +9,139 @@
 
       gtag('config', 'G-LTT2J0YF6J');
     </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jelly Blocks - Match, Blast, and Survive!</title>
+    
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #1a1a24, #2d2b42);
+            border-bottom: 3px solid #3DDC84;
+        }
+        h1 {
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+        .subtitle {
+            font-size: 1.3em;
+            line-height: 1.6;
+            color: #b3b3b3;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            font-size: 1.1em;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: transform 0.2s, opacity 0.2s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+        }
+        .btn-amazon { background-color: #FF9900; color: #111; }
+        .btn-itch { background-color: #FA5C5C; }
+        .btn-apk { background-color: #3DDC84; color: #111; }
+        
+        .screenshots {
+            display: flex;
+            justify-content: space-between;
+            margin: 50px 0;
+            gap: 15px;
+        }
+        .screenshots img {
+            width: 31%;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+        }
+        .description-box {
+            background-color: #1e1e1e;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .description-box h2 {
+            margin-top: 0;
+            color: #3DDC84;
+        }
+        .description-box p {
+            font-size: 1.1em;
+            color: #d4d4d4;
+            line-height: 1.8;
+        }
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: #0a0a0a;
+            border-top: 1px solid #333;
+        }
+        footer a {
+            color: #3DDC84;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
 
-    <header class="hero">
-        <div class="container hero-content">
-            <div class="hero-text">
-                <h1>Jelly Blocks</h1>
-                <p class="tagline">The ultimate block puzzle challenge. Match, Blast, and Survive!</p>
-                <div class="download-buttons">
-                    <a href="#" class="btn primary-btn">Download on Google Play</a>
-                    <a href="#" class="btn secondary-btn">Download on App Store</a>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <img src="intro.jpg" alt="Jelly Blocks Intro" class="mockup-img" onerror="this.style.display='none'">
-            </div>
-        </div>
-    </header>
+<header>
+    <h1>Jelly Blocks</h1>
+    <p class="subtitle">Match, Blast, and Survive! A fun, classic block puzzle game with squishy jelly graphics.</p>
+    <div class="buttons">
+        <a href="https://www.amazon.com/dp/B0GSSR7JZ5" target="_blank" class="btn btn-amazon">Available on Amazon</a>
+        <a href="https://deenfinance.itch.io/jellyblocks" target="_blank" class="btn btn-itch">Get it on itch.io</a>
+        <a href="https://raw.githubusercontent.com/DeenFinancials/deenfinancials.github.io/main/app-release.apk" target="_blank" class="btn btn-apk">Download Direct APK</a>
+    </div>
+</header>
 
-    <section class="gameplay">
-        <div class="container">
-            <img src="gameplay.jpg" alt="Jelly Blocks Gameplay" class="showcase-img" onerror="this.style.display='none'">
-        </div>
-    </section>
+<div class="container">
+    <div class="screenshots">
+        <img src="intro.jpg" alt="Jelly Blocks Title Screen">
+        <img src="gameplay.jpg" alt="Jelly Blocks Puzzle Grid">
+        <img src="revive.jpg" alt="Jelly Blocks Out of Moves Screen">
+    </div>
 
-    <section class="features">
-        <div class="container feature-grid">
-            <div class="feature-card">
-                <h3>Endless Puzzles</h3>
-                <p>Test your brain with increasingly difficult block formations. How long can you survive?</p>
-            </div>
-            <div class="feature-card">
-                <h3>Strategic Power-Ups</h3>
-                <p>Earn bombs to clear the board and double your coins to climb the leaderboards.</p>
-            </div>
-            <div class="feature-card">
-                <img src="revive.jpg" alt="Out of Moves Revive" class="feature-img" onerror="this.style.display='none'">
-                <h3>Clutch Revives</h3>
-                <p>Make a mistake? Watch a quick ad to revive, keep your high score alive, and beat your personal best.</p>
-            </div>
-        </div>
-    </section>
+    <div class="description-box">
+        <h2>About The Game</h2>
+        <p>Drop into a squishy world with Jelly Blocks! This isn't just another block puzzle; it's a delightful brain teaser wrapped in vibrant, jelly-like graphics that are satisfying to touch and play. Fit the blocks, clear the lines, and relax. Perfect for passing the time and training your brain. Free to play!</p>
+    </div>
+</div>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 DeenFinance. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="mailto:deenfinacials@gmail.com">Contact Support</a>
-                <a href="privacy.html">Privacy Policy</a>
-            </div>
-        </div>
-    </footer>
+<footer>
+    <p>&copy; 2026 DeenFinancials.co. All Rights Reserved.</p>
+    <p><a href="https://deenfinancials.github.io/jellyblocks-privacy.html" target="_blank">View Privacy Policy</a></p>
+</footer>
 
 </body>
 </html>
