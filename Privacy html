@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Jelly Blocks</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f7f6;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        h1 { margin-bottom: 10px; }
+        h2 { margin-top: 30px; margin-bottom: 15px; font-size: 1.4rem; }
+        p, ul { margin-bottom: 15px; }
+        ul { padding-left: 20px; }
+        a { color: #6e8efb; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .last-updated { font-style: italic; color: #777; margin-bottom: 30px; display: block; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Privacy Policy for Jelly Blocks</h1>
+        <span class="last-updated">Last Updated: March 23, 2026</span>
+
+        <p>DeenFinancials ("we," "our," or "us") operates the Jelly Blocks mobile application. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you play our game. Please read this privacy policy carefully.</p>
+
+        <h2>1. Information We Collect</h2>
+        <p>We do not collect personal identifying information (like your name or address) directly within the game unless you voluntarily provide it by contacting our support team. However, we do use third-party services that may collect data automatically to ensure the game functions properly:</p>
+        <ul>
+            <li><strong>Usage Data:</strong> Information about your interactions with the game, such as levels played, session length, and in-game events (e.g., triggering a bomb or using a revive).</li>
+            <li><strong>Device Information:</strong> Device type, operating system, unique device identifiers (like Advertising IDs), and general location data (such as country or region).</li>
+        </ul>
+
+        <h2>2. Third-Party Services & Ad Networks</h2>
+        <p>Jelly Blocks is a free-to-play game supported by third-party advertising networks. We also use analytics tools to understand how players interact with our app. These third parties may use cookies, beacons, and similar technologies to collect information.</p>
+        <ul>
+            <li><strong>Google Analytics for Firebase:</strong> Used to track gameplay events and user engagement.</li>
+            <li><strong>Ad Networks:</strong> We use third-party ad networks to serve rewarded videos and interstitial ads. These networks may collect your Advertising ID to serve relevant ads.</li>
+        </ul>
+
+        <h2>3. How We Use Your Information</h2>
+        <p>The information collected is used strictly to:</p>
+        <ul>
+            <li>Provide, operate, and maintain the game.</li>
+            <li>Monitor and analyze usage and trends to improve player experience.</li>
+            <li>Serve functional ads (such as rewarded videos for in-game currency).</li>
+            <li>Prevent fraudulent activity and ensure compliance with our terms.</li>
+        </ul>
+
+        <h2>4. Data Protection Rights</h2>
+        <p>Depending on your location, you may have specific rights regarding your data under regulations such as the GDPR, CCPA, or the Nigeria Data Protection Act (NDPA). These rights include:</p>
+        <ul>
+            <li>The right to request access to the data collected about you.</li>
+            <li>The right to request deletion of your data.</li>
+            <li>The right to opt-out of personalized advertising through your device's settings (e.g., "Limit Ad Tracking" on iOS or "Opt out of Ads Personalization" on Android).</li>
+        </ul>
+
+        <h2>5. Changes to This Privacy Policy</h2>
+        <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date at the top.</p>
+
+        <h2>6. Contact Us</h2>
+        <p>If you have any questions or concerns about this Privacy Policy, please contact us at:</p>
+        <p><strong>Email:</strong> <a href="mailto:deenfinacials@gmail.com">deenfinacials@gmail.com</a></p>
+    </div>
+
+</body>
+</html>
